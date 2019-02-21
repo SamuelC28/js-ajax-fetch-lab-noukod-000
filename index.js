@@ -5,6 +5,20 @@ function showIssues(json) {
 }
 
 function createIssue() {
+  const issueData = {
+    title: document.getElementById('title').value,
+    body: document.getElementById('body').value
+  }
+  const username = 'alyssa0528'
+  fetch(`https://api.github.com/repos/${username}/js-ajax-fetch-lab/issues`, {
+    method: 'POST',
+    body: JSON.stringify(issueData),
+    headers: {
+      Authorization: `token ${getToken()}`
+    }
+  })
+  .then(response => response.json())
+  .then(json => getIssues())
 }
 
 function showResults(json) {
