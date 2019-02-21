@@ -42,7 +42,7 @@ function createIssue() {
 
 function getIssues() {
   //once an issue is submitted, fetch all open issues to see the issues you are creating
-  const username = 'alyssa0528'
+  const username = 'SamuelC28'
   fetch(`https://api.github.com/repos/${username}/js-ajax-fetch-lab/issues`, {
     headers: {
       Authorization: `token ${getToken()}`
