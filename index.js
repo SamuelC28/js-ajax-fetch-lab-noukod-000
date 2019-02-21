@@ -1,4 +1,12 @@
 function getIssues() {
+  const username = 'alyssa0528'
+  fetch(`https://api.github.com/repos/${username}/js-ajax-fetch-lab/issues`, {
+    headers: {
+      Authorization: `token ${getToken()}`
+    }
+  })
+    .then(response => response.json())
+.then(json => console.log(json))
 }
 
 function showIssues(json) {
