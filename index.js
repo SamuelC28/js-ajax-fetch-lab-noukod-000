@@ -31,7 +31,7 @@ function createIssue() {
   }
   const username = 'SamuelC28'
   fetch(`https://api.github.com/repos/${username}/javascript-fetch-lab/issues`, {
-    method: 'POST',
+    method: 'post',
     body: JSON.stringify(issueData),
     headers: {
       Authorization: `token ${getToken()}`
