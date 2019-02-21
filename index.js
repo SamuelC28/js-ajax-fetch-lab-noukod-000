@@ -8,6 +8,7 @@ function createIssue() {
 }
 
 function showResults(json) {
+   document.getElementById('results').innerHTML = `<a href="${json.html_url}" target="_blank">${json.html_url}</a>`
 }
 
 
@@ -16,9 +17,7 @@ function forkRepo() {
   //use fetch to fork it!
   fetch(`https://api.github.com/repos/${repo}/forks`, {
     method: 'POST',
-    headers: {
-      Authorization: `token ${getToken()}`
-    }
+    headers: { Authorization: `token ${getToken()}`}
   })
     .then(response => response.json())
     .then(json => showResults(json))
