@@ -48,7 +48,7 @@ describe('index', () => {
     it('fetches the create fork api', () => {
       forkRepo()
       const url = fetchSpy.calls[0].arguments[0]
-      expect(url).toMatch(/api.github.com\/repos\/learn-co-curriculum\/javascript-fetch-lab/)
+      expect(url).toMatch(/api.github.com\/repos\/learn-co-curriculum\/js-ajax-fetch-lab/)
       const opts = fetchSpy.calls[0].arguments[1]
       expect(opts.method).toMatch(/post/)
       expect(opts.headers).toMatch(/Authorization: token\s./)
